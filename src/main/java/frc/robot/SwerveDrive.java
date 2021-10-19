@@ -35,10 +35,10 @@ public SwerveDrive (Wheel br, Wheel bl, Wheel fr, Wheel fl) {
     double frSpeed = Math.sqrt ((b * b) + (d * d));
     double flSpeed = Math.sqrt ((b * b) + (c * c));
 
-    double brAngle = Math.atan2 (a, d) / Math.PI;
-    double blAngle = Math.atan2 (a, c) / Math.PI;
-    double frAngle = Math.atan2 (b, d) / Math.PI;
-    double flAngle = Math.atan2 (b, c) / Math.PI;
+    double brAngle = (Math.atan2 (a, d) / Math.PI) * 180;
+    double blAngle = (Math.atan2 (a, c) / Math.PI * 180);
+    double frAngle = (Math.atan2 (b, d) / Math.PI) * 180;
+    double flAngle = (Math.atan2 (b, c) / Math.PI) * 180;
 
     br.drive (brSpeed, brAngle);
     bl.drive (blSpeed, blAngle);
