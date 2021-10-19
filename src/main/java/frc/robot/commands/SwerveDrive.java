@@ -20,14 +20,12 @@ public SwerveDrive (Wheel br, Wheel bl, Wheel fr, Wheel fl) {
 }
 
   public void drive (double x1, double y1, double x2) {
-    double L = Constants.L;
-    double W = Constants.W;
-    double r = Math.sqrt ((L * L) + (W * W));
+    double sine = Constants.side_over_radius;
 
-    double a = x1 - x2 * (L / r);
-    double b = x1 + x2 * (L / r);
-    double c = y1 - x2 * (W / r);
-    double d = y1 + x2 * (W / r);
+    double a = x1 - x2 * sine;
+    double b = x1 + x2 * sine;
+    double c = y1 - x2 * sine;
+    double d = y1 + x2 * sine;
 
     double brSpeed = Math.sqrt ((b * b) + (d * d));
     double blSpeed = Math.sqrt ((b * b) + (c * c));

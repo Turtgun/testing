@@ -31,8 +31,7 @@ public final class Constants {
     public static final double units_per_degree = 74.152;
 
     //Length and width of the robot
-    public static final double L = 0.581;
-    public static final double W = 0.581;
+    public static final double side_over_radius = 0.70710678118;
     
     //Xbox Bindings
     public static final int left_x_axis = 0;
