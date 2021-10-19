@@ -7,7 +7,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.XboxRemote;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -19,7 +18,6 @@ import frc.robot.subsystems.XboxRemote;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public XboxController xboxController = new XboxController(Constants.xbox);
-  public XboxRemote xboxRemote = new XboxRemote(xboxController);
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
