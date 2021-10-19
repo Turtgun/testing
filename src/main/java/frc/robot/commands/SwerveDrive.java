@@ -3,12 +3,10 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
-
-import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 
 /** An example command that uses an example subsystem. */
-public class SwerveDrive extends CommandBase {
+public class SwerveDrive {
   private Wheel br;
   private Wheel bl;
   private Wheel fr;
@@ -25,22 +23,21 @@ public SwerveDrive (Wheel br, Wheel bl, Wheel fr, Wheel fl) {
     double L = Constants.L;
     double W = Constants.W;
     double r = Math.sqrt ((L * L) + (W * W));
-    y1 *= -1;
 
     double a = x1 - x2 * (L / r);
     double b = x1 + x2 * (L / r);
     double c = y1 - x2 * (W / r);
     double d = y1 + x2 * (W / r);
 
-    double brSpeed = Math.sqrt ((a * a) + (d * d));
-    double blSpeed = Math.sqrt ((a * a) + (c * c));
-    double frSpeed = Math.sqrt ((b * b) + (d * d));
-    double flSpeed = Math.sqrt ((b * b) + (c * c));
+    double brSpeed = Math.sqrt ((b * b) + (d * d));
+    double blSpeed = Math.sqrt ((b * b) + (c * c));
+    double frSpeed = Math.sqrt ((a * a) + (d * d));
+    double flSpeed = Math.sqrt ((a * a) + (c * c));
 
-    double brAngle = (Math.atan2 (a, d) / Math.PI) * 180;
-    double blAngle = (Math.atan2 (a, c) / Math.PI * 180);
-    double frAngle = (Math.atan2 (b, d) / Math.PI) * 180;
-    double flAngle = (Math.atan2 (b, c) / Math.PI) * 180;
+    double brAngle = (Math.atan2 (b, d) / Math.PI) * 180;
+    double blAngle = (Math.atan2 (b, c) / Math.PI) * 180;
+    double frAngle = (Math.atan2 (a, d) / Math.PI) * 180;
+    double flAngle = (Math.atan2 (a, c) / Math.PI) * 180;
 
     br.drive (brSpeed, brAngle);
     bl.drive (blSpeed, blAngle);

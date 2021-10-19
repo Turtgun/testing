@@ -15,17 +15,20 @@ import edu.wpi.first.wpilibj.SPI.Port;
  */
 public final class Constants {
     //Ports
-    public static final int xbox = 0;
-    public static final Port mxp = Port.kMXP;
+    public static final int xbox_p = 0;
+    public static final Port mxp_p = Port.kMXP;
     
-    public static final int left_front_angle = 7;
-    public static final int left_front_speed = 8;
-    public static final int right_back_angle = 3;
-    public static final int right_back_speed = 4;
-    public static final int left_back_angle = 1;
-    public static final int left_back_speed = 2;
-    public static final int right_front_angle = 5;
-    public static final int right_front_speed = 6;
+    public static final int bl_angle = 1;
+    public static final int bl_speed = 2;
+    public static final int br_angle = 3;
+    public static final int br_speed = 4;
+    public static final int fr_angle = 5;
+    public static final int fr_speed = 6;
+    public static final int fl_angle = 7;
+    public static final int fl_speed = 8;
+
+    //Units per degrees 
+    public static final double units_per_degree = 74.152;
 
     //Length and width of the robot
     public static final double L = 0.581;
