@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -15,8 +16,14 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  * project.
  */
 public class Robot extends TimedRobot {
-  private Command m_autonomousCommand;
+  private Joystick joystick = new Joystick (0);
+  private Wheel br = new Wheel (0, 1, 0);
+  private Wheel bl = new Wheel (2, 3, 1);
+  private Wheel fr = new Wheel (4, 5, 2);
+  private Wheel fl = new Wheel (6, 7, 3);
 
+  private SwerveDrive sd = new SwerveDrive(br, bl, fr, fl);
+  private Command m_autonomousCommand;
   private RobotContainer m_robotContainer;
 
   /**
@@ -81,7 +88,9 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic () {
+    sd.drive (joystick.getRawAxis (1), joystick.getRawAxis (0), joystick.getRawAxis (4));
+  }
 
   @Override
   public void testInit() {
