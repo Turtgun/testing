@@ -7,8 +7,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.button.Button;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.SwerveDrive;
 import frc.robot.functional.Wheel;
 
@@ -27,7 +25,6 @@ public class RobotContainer {
   private Wheel fl = new Wheel (Constants.fl_angle, Constants.fl_speed);
   
   private XboxController xc = new XboxController(Constants.xbox_p);
-  private Button xButton = new JoystickButton(xc, Constants.x_button_num);
 
   // The robot's subsystems and commands are defined here...
   
@@ -44,10 +41,13 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    xButton.whenPressed(new SwerveDrive(br, bl, fr, fl, xc));
   }
 
   public Command getAutonomousCommand() {
     return null;
+  }
+
+  public Command getTeleopCommand() {
+    return new SwerveDrive(br, bl, fr, fl, xc);
   }
 }

@@ -33,15 +33,15 @@ public class SwerveDrive extends CommandBase{
     double c = y1 - x2 * sine;
     double d = y1 + x2 * sine;
 
-    double brSpeed = Math.sqrt ((b * b) + (d * d));
-    double blSpeed = Math.sqrt ((b * b) + (c * c));
-    double frSpeed = Math.sqrt ((a * a) + (d * d));
-    double flSpeed = Math.sqrt ((a * a) + (c * c));
+    double brSpeed = Math.sqrt ((a * a) + (c * c));
+    double blSpeed = Math.sqrt ((a * a) + (d * d));
+    double frSpeed = Math.sqrt ((b * b) + (c * c));
+    double flSpeed = Math.sqrt ((b * b) + (d * d));
 
-    double brAngle = (Math.atan2 (b, d) / Math.PI) * 180;
-    double blAngle = (Math.atan2 (b, c) / Math.PI) * 180;
-    double frAngle = (Math.atan2 (a, d) / Math.PI) * 180;
-    double flAngle = (Math.atan2 (a, c) / Math.PI) * 180;
+    double brAngle = (Math.atan2 (a, c) / Math.PI) * 180;
+    double blAngle = (Math.atan2 (a, d) / Math.PI) * 180;
+    double frAngle = (Math.atan2 (b, c) / Math.PI) * 180;
+    double flAngle = (Math.atan2 (b, d) / Math.PI) * 180;
 
     br.drive (brSpeed, brAngle);
     bl.drive (blSpeed, blAngle);
