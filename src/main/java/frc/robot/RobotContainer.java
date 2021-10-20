@@ -7,8 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.commands.SwerveDrive;
-import frc.robot.functional.Wheel;
+import frc.robot.commands.DriveManager;
 
 
 /**
@@ -19,11 +18,6 @@ import frc.robot.functional.Wheel;
  * commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  private Wheel bl = new Wheel (Constants.bl_angle, Constants.bl_speed);
-  private Wheel br = new Wheel (Constants.br_angle, Constants.br_speed);
-  private Wheel fr = new Wheel (Constants.fr_angle, Constants.fr_speed);
-  private Wheel fl = new Wheel (Constants.fl_angle, Constants.fl_speed);
-  
   private XboxController xc = new XboxController(Constants.xbox_p);
 
   // The robot's subsystems and commands are defined here...
@@ -43,11 +37,7 @@ public class RobotContainer {
   private void configureButtonBindings() {
   }
 
-  public Command getAutonomousCommand() {
-    return null;
-  }
-
-  public Command getTeleopCommand() {
-    return new SwerveDrive(br, bl, fr, fl, xc);
+  public Command getCommand() {
+    return new DriveManager(xc);
   }
 }
