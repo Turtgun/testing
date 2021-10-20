@@ -27,6 +27,7 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
     m_command = m_robotContainer.getCommand();
+    m_command.schedule();
   }
 
   /**
@@ -55,7 +56,7 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
-    m_command.schedule();
+    Constants.drive_mode = 1;
   }
 
   /** This function is called periodically during autonomous. */
@@ -69,7 +70,6 @@ public class Robot extends TimedRobot {
     // continue until interrupted by another command, remove
     // this line or comment it out.
     Constants.drive_mode = 0; 
-    m_command.schedule();
   }
 
   /** This function is called periodically during operator control. */
