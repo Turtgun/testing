@@ -34,6 +34,9 @@ public class Wheel {
     angle_m.config_kF(slotIdx, kfDir);
 
     speed_m.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
+    
+    angle_m.setSelectedSensorPosition(0);
+    speed_m.setSelectedSensorPosition(0);
   }
 
   public void drive(double speed, double angle) {

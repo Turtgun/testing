@@ -18,6 +18,9 @@ public class SwerveDrive {
     this.bl = bl;
     this.fr = fr;
     this.fl = fl;
+    
+    br.speed_m.setInverted(true);
+    fr.speed_m.setInverted(true);
   }
 
   public void drive (double x1, double y1, double x2) {
