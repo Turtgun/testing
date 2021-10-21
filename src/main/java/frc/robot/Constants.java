@@ -38,5 +38,6 @@ public final class Constants {
     public static final int right_y_axis = 5;
 
     //State variables
-    public static int drive_mode = 0;
+    public static int drive_mode;
+	public static boolean in_auto;
 }

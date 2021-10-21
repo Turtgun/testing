@@ -56,7 +56,8 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
-    Constants.drive_mode = 1;
+    Constants.in_auto = true;
+    m_command.initialize();
   }
 
   /** This function is called periodically during autonomous. */
@@ -69,7 +70,8 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    Constants.drive_mode = 0; 
+    Constants.in_auto = false; 
+    m_command.initialize();
   }
 
   /** This function is called periodically during operator control. */
