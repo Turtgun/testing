@@ -46,4 +46,8 @@ public class SwerveDrive {
     fr.drive (frSpeed, frAngle);
     fl.drive (flSpeed, flAngle);
   }
+
+  public Wheel[] getWheels() {
+    return new Wheel[] {br, bl, fr, fl};
+  }
 }
